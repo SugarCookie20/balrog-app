@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Doctor Login (Balrog Department)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .login-wrap { max-width: 400px; margin: 8vh auto 20px; }
+        @media(max-width: 480px) { .login-wrap { margin-top: 4vh; } }
+    </style>
+</head>
+<body>
+<div class="bg-clouds" id="cloudBg"></div>
+<div class="wrap login-wrap">
+
+    <div class="card" style="text-align:center; padding-bottom:30px;">
+        <div id="mascotSlot" style="display:flex; justify-content:center; margin-bottom:16px;"></div>
+        <h2 class="sec-title" style="margin-bottom:4px;">Doctor Login</h2>
+        <p class="sec-sub" style="margin-bottom:24px;">(डॉक्टर लॉगिन)</p>
+
+        <form id="loginForm" style="text-align:left;">
+            <div class="field">
+                <label class="lbl-en" for="username">Username <span class="mr" style="font-weight:400;color:var(--ink-soft);">(युझरनेम)</span></label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="field">
+                <label class="lbl-en" for="password">Password <span class="mr" style="font-weight:400;color:var(--ink-soft);">(पासवर्ड)</span></label>
+                <input type="password" id="password" required>
+            </div>
+
+            <div class="err" id="loginErr" style="text-align:center; margin-bottom:16px;"></div>
+
+            <button type="submit" class="btn-primary" style="width:100%; margin-top:10px;">Login<br><span class="mr" style="font-size:13px; font-weight:500;">(लॉगिन)</span></button>
+        </form>
+    </div>
+
+</div>
+
+<script src="/illustrations.js"></script>
+<script>
+    document.getElementById("mascotSlot").innerHTML = ILL.mascot;
+    document.getElementById("cloudBg").innerHTML = ILL.cloud;
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        var u = document.getElementById("username").value;
+        var p = document.getElementById("password").value;
+        var err = document.getElementById("loginErr");
+        var btn = document.querySelector("#loginForm button");
+
+        err.style.display = "none";
+        btn.disabled = true;
+        btn.innerHTML = 'Verifying...<br><span class="mr" style="font-size:13px; font-weight:500;">(तपासत आहे...)</span>';
+
+        fetch("/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username: u, password: p })
+        }).then(function(res) {
+            if (res.ok) {
+                window.location.href = "/doctor";
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = 'Login<br><span class="mr" style="font-size:13px; font-weight:500;">(लॉगिन)</span>';
+                err.style.display = "block";
+                err.innerText = "Invalid credentials. (चुकीची माहिती.)";
+            }
+        }).catch(function() {
+            btn.disabled = false;
+            btn.innerHTML = 'Login<br><span class="mr" style="font-size:13px; font-weight:500;">(लॉगिन)</span>';
+            err.style.display = "block";
+            err.innerText = "Network error. Server may be offline.";
+        });
+    });
+</script>
+</body>
+</html>

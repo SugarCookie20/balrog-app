@@ -1,0 +1,92 @@
+[
+  {
+    "key": "0-3", "min": 0, "max": 3,
+    "label_en": "0–3 months", "label_mr": "०–३ महिने",
+    "items": [
+      { "en": "Makes eye contact", "mr": "डोळ्यांनी संपर्क साधते" },
+      { "en": "Smiles responsively", "mr": "हसण्याला प्रतिसाद देत हसते" },
+      { "en": "Follows objects with eyes", "mr": "वस्तूंना डोळ्यांनी फॉलो करते" },
+      { "en": "Turns head toward sound", "mr": "आवाजाच्या दिशेने मान वळवते" }
+    ]
+  },
+  {
+    "key": "3-6", "min": 3, "max": 6,
+    "label_en": "3–6 months", "label_mr": "३–६ महिने",
+    "items": [
+      { "en": "Holds head steady", "mr": "मान स्थिर धरते" },
+      { "en": "Reaches for objects", "mr": "वस्तूंसाठी हात पुढे करते" },
+      { "en": "Laughs or squeals", "mr": "मोठ्याने हसते / किंचाळते" },
+      { "en": "Rolls over", "mr": "कुशीवर / पालथे वळते" }
+    ]
+  },
+  {
+    "key": "6-9", "min": 6, "max": 9,
+    "label_en": "6–9 months", "label_mr": "६–९ महिने",
+    "items": [
+      { "en": "Sits without support", "mr": "आधाराशिवाय बसते" },
+      { "en": "Responds to name", "mr": "नावाला प्रतिसाद देते" },
+      { "en": "Babbles (mama/baba sounds)", "mr": "बोबडे बोलते (मामा/बाबा असे आवाज)" },
+      { "en": "Transfers object hand to hand", "mr": "वस्तू एका हातातून दुसऱ्या हातात देते" }
+    ]
+  },
+  {
+    "key": "9-12", "min": 9, "max": 12,
+    "label_en": "9–12 months", "label_mr": "९–१२ महिने",
+    "items": [
+      { "en": "Crawls", "mr": "रांगते" },
+      { "en": "Pulls to stand", "mr": "आधार घेऊन उभे राहते" },
+      { "en": "Says 1–2 words", "mr": "१–२ शब्द बोलते" },
+      { "en": "Waves bye-bye", "mr": "बाय-बाय करते" }
+    ]
+  },
+  {
+    "key": "12-18", "min": 12, "max": 18,
+    "label_en": "12–18 months", "label_mr": "१२–१८ महिने",
+    "items": [
+      { "en": "Walks independently", "mr": "स्वतः चालते" },
+      { "en": "Points to desired objects", "mr": "हव्या असलेल्या वस्तूकडे बोट दाखवते" },
+      { "en": "Says 3–5 words", "mr": "३–५ शब्द बोलते" },
+      { "en": "Drinks from a cup", "mr": "कपमधून पिते" }
+    ]
+  },
+  {
+    "key": "18-24", "min": 18, "max": 24,
+    "label_en": "18–24 months", "label_mr": "१८–२४ महिने",
+    "items": [
+      { "en": "Runs", "mr": "धावते" },
+      { "en": "Speaks 2-word sentences", "mr": "दोन शब्दांची वाक्ये बोलते" },
+      { "en": "Follows simple instructions", "mr": "साध्या सूचना पाळते" },
+      { "en": "Stacks 2–4 blocks", "mr": "२–४ ठोकळे रचते" }
+    ]
+  },
+  {
+    "key": "24-36", "min": 24, "max": 36,
+    "label_en": "2–3 years", "label_mr": "२–३ वर्षे",
+    "items": [
+      { "en": "Jumps with both feet", "mr": "दोन्ही पायांनी उडी मारते" },
+      { "en": "Speaks in short sentences", "mr": "लहान वाक्यांत बोलते" },
+      { "en": "Plays alongside other children", "mr": "इतर मुलांसोबत खेळते" },
+      { "en": "Uses a spoon well", "mr": "चमच्याने व्यवस्थित जेवते" }
+    ]
+  },
+  {
+    "key": "36-48", "min": 36, "max": 48,
+    "label_en": "3–4 years", "label_mr": "३–४ वर्षे",
+    "items": [
+      { "en": "Hops on one foot", "mr": "एका पायावर उडी मारते" },
+      { "en": "Names basic colours", "mr": "मूळ रंग ओळखून सांगते" },
+      { "en": "Dresses self partially", "mr": "स्वतः थोडेफार कपडे घालते" },
+      { "en": "Engages in pretend play", "mr": "काल्पनिक खेळ खेळते" }
+    ]
+  },
+  {
+    "key": "48-60", "min": 48, "max": 60,
+    "label_en": "4–5 years", "label_mr": "४–५ वर्षे",
+    "items": [
+      { "en": "Balances on one foot briefly", "mr": "क्षणभर एका पायावर तोल सांभाळते" },
+      { "en": "Speaks in full sentences", "mr": "पूर्ण वाक्यांत बोलते" },
+      { "en": "Counts to 10", "mr": "१ ते १० पर्यंत मोजते" },
+      { "en": "Follows 3-step instructions", "mr": "तीन टप्प्यांच्या सूचना पाळते" }
+    ]
+  }
+]

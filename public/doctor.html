@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Doctor Dashboard (Balrog Department)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .wrap{ max-width: 760px; }
+    @media print{ .doc-topbar .dateinput, .doc-topbar button{ display:none !important; } }
+  </style>
+</head>
+<body>
+<div class="bg-clouds" id="cloudBg"></div>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="mascot" id="mascotSlot"></div>
+    <div>
+      <h1>Doctor Dashboard</h1>
+      <p class="sub">डॉक्टर डॅशबोर्ड</p>
+      <div class="dept-tag"><b>Balrog Department</b> <span class="mr">(बालरोग विभाग)</span></div>
+    </div>
+  </div>
+
+  <div class="card doc-topbar">
+    <div>
+      <label class="lbl-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px;">Date <span class="mr" style="font-weight:400;color:var(--ink-soft)">(तारीख)</span></label>
+      <input type="date" id="dateInput" class="dateinput">
+    </div>
+
+    <div style="display:flex; gap:10px;">
+      <button class="btn-primary" onclick="window.print()">Print day summary<br><span class="mr" style="font-size:12.5px; font-weight:500;">(सारांश छापा)</span></button>
+      <button class="btn-ghost" onclick="window.AppDoc.logout()">Logout<br><span class="mr" style="font-size:12.5px; font-weight:500;">(बाहेर पडा)</span></button>
+    </div>
+  </div>
+
+  <div class="stat-grid" id="statGrid"></div>
+
+  <div class="card" id="concernsCard" style="display:none;">
+    <h3 style="font-family:var(--font-head);color:var(--sky-deep);margin:0 0 10px;">Reported concerns today <span class="mr" style="font-weight:400;font-size:14px;color:var(--ink-soft)">(आजच्या चिंता)</span></h3>
+    <div id="concernsTally"></div>
+  </div>
+
+  <h2 class="sec-title" style="margin: 18px 0 10px;">Evaluations <span class="mr" style="font-weight:400;font-size:15px;color:var(--ink-soft)">(तपासण्या)</span></h2>
+  <div class="sub-list" id="subList"></div>
+  <p class="hint" id="emptyState" style="display:none;">No screenings recorded for this date yet. <span class="mr">(या तारखेसाठी अजून कोणतीही तपासणी नोंदवलेली नाही.)</span></p>
+
+</div>
+
+<script src="/illustrations.js"></script>
+<script src="/doctor.js"></script>
+</body>
+</html>

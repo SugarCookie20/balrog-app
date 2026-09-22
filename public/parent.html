@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Child Growth &amp; Development Screening (Balrog Department)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="bg-clouds" id="cloudBg"></div>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="mascot" id="mascotSlot"></div>
+    <div>
+      <h1>Child Growth &amp; Development Screening</h1>
+      <p class="sub">बाल वाढ व विकास तपासणी (० ते ५ वर्षे)</p>
+      <div class="dept-tag"><b>Balrog Department</b> <span class="mr">(बालरोग विभाग)</span></div>
+    </div>
+  </div>
+
+  <div id="formArea">
+    <div class="rail" id="rail"></div>
+
+    <!-- STEP 1 -->
+    <section class="step active" data-step="1">
+      <div class="card">
+        <h2 class="sec-title">Parent details <span class="mr" style="font-size:16px; font-weight:500; color:var(--ink-soft);">(पालकांची माहिती)</span></h2>
+
+        <div class="field">
+          <label class="lbl-en" for="parentName">Parent's name <span class="mr" style="font-weight:400;color:var(--ink-soft);">(पालकांचे नाव)</span></label>
+          <input type="text" id="parentName" placeholder="e.g. Maitrayee Deshmukh">
+          <div class="err" id="err-parentName">Please enter the parent's name. (कृपया पालकांचे नाव लिहा.)</div>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label class="lbl-en" for="mobile">Mobile number <span class="mr" style="font-weight:400;color:var(--ink-soft);">(मोबाईल नंबर)</span></label>
+            <input type="tel" id="mobile" inputmode="numeric" placeholder="10-digit number">
+            <div class="err" id="err-mobile">Enter a valid 10-digit number. (१० अंकी नंबर योग्य नाही.)</div>
+          </div>
+          <div class="field">
+            <label class="lbl-en" for="email">Email <span style="font-weight:400;color:var(--ink-soft)">(for report)</span> <span class="mr" style="font-weight:400;color:var(--ink-soft);">(ईमेल)</span></label>
+            <input type="email" id="email" placeholder="you@example.com">
+            <div class="err" id="err-email">Enter a valid email address. (ईमेल योग्य नाही.)</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="lbl-en" for="childName">Child's name <span class="mr" style="font-weight:400;color:var(--ink-soft);">(बालकाचे नाव)</span></label>
+          <input type="text" id="childName" placeholder="e.g. Aarav Deshmukh">
+          <div class="err" id="err-childName">Please enter the child's name. (कृपया बालकाचे नाव लिहा.)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step" data-step="2">
+      <div class="card">
+        <h2 class="sec-title">Child details <span class="mr" style="font-size:16px; font-weight:500; color:var(--ink-soft);">(बालकाची माहिती)</span></h2>
+
+        <div class="field">
+          <label class="lbl-en">Sex <span class="mr" style="font-weight:400;color:var(--ink-soft);">(लिंग)</span></label>
+          <div class="choice-row" id="sexChoice">
+            <div class="choice" data-val="Boy">Boy <span class="c-mr">(मुलगा)</span></div>
+            <div class="choice" data-val="Girl">Girl <span class="c-mr">(मुलगी)</span></div>
+          </div>
+          <div class="err" id="err-sex">Please select the child's sex. (कृपया लिंग निवडा.)</div>
+        </div>
+
+        <div class="field">
+          <label class="lbl-en" for="dob">Date of birth <span class="mr" style="font-weight:400;color:var(--ink-soft);">(जन्मतारीख)</span></label>
+          <input type="date" id="dob">
+          <div class="hint" id="ageOut">Age is calculated automatically. (वय आपोआप मोजले जाईल.)</div>
+          <div class="err" id="err-dob">Enter a valid date of birth, 0–5 years. (जन्मतारीख योग्य नाही - ० ते ५ वर्षे.)</div>
+        </div>
+
+        <div class="field">
+          <label class="lbl-en" for="birthWeight">Birth weight (kg) <span style="font-weight:400;color:var(--ink-soft)">— optional</span> <span class="mr" style="font-weight:400;color:var(--ink-soft);">(जन्माच्या वेळचे वजन — ऐच्छिक)</span></label>
+          <input type="number" step="0.01" id="birthWeight" placeholder="e.g. 3.1">
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step" data-step="3">
+      <div class="card">
+        <div class="step-head" id="plantIconSlot"></div>
+        <h2 class="sec-title">Growth assessment <span class="mr" style="font-size:16px; font-weight:500; color:var(--ink-soft);">(वाढीचे मूल्यांकन)</span></h2>
+
+        <div class="row2">
+          <div class="field">
+            <label class="lbl-en" for="weight">Current weight (kg) <span class="mr" style="font-weight:400;color:var(--ink-soft);">(सध्याचे वजन)</span></label>
+            <input type="number" step="0.01" id="weight" placeholder="e.g. 11.2">
+            <div class="err" id="err-weight">Enter the current weight. (सध्याचे वजन लिहा.)</div>
+          </div>
+          <div class="field">
+            <label class="lbl-en" for="height">Current height (cm) <span class="mr" style="font-weight:400;color:var(--ink-soft);">(सध्याची उंची)</span></label>
+            <input type="number" step="0.1" id="height" placeholder="e.g. 78">
+            <div class="err" id="err-height">Enter the current height. (सध्याची उंची लिहा.)</div>
+          </div>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label class="lbl-en" for="head">Head circumference (cm) <span class="mr" style="font-weight:400;color:var(--ink-soft);">(डोक्याचा घेर)</span></label>
+            <input type="number" step="0.1" id="head" placeholder="e.g. 45">
+          </div>
+          <div class="field">
+            <label class="lbl-en" for="muac">MUAC (cm) <span style="font-weight:400;color:var(--ink-soft)">— optional</span> <span class="mr" style="font-weight:400;color:var(--ink-soft);">(दंडाचा घेर)</span></label>
+            <input type="number" step="0.1" id="muac" placeholder="e.g. 14.5">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="step" data-step="4">
+      <div class="card">
+        <h2 class="sec-title">Development checklist <span class="mr" style="font-size:16px; font-weight:500; color:var(--ink-soft);">(विकासाची तपासणी यादी)</span></h2>
+        <div class="band-note" id="bandNote"></div>
+        <div id="milestoneList"></div>
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="step" data-step="5">
+      <div class="card">
+        <h2 class="sec-title">Behaviour <span class="mr" style="font-size:16px; font-weight:500; color:var(--ink-soft);">(वर्तन)</span></h2>
+
+        <div class="field">
+          <label class="lbl-en">Daily screen time <span class="mr" style="font-weight:400;color:var(--ink-soft);">(दररोजचा स्क्रीन वेळ)</span></label>
+          <div class="choice-row" id="screenChoice">
+            <div class="choice" data-val="lt1">&lt; 1 hr <span class="c-mr">(१ तासापेक्षा कमी)</span></div>
+            <div class="choice" data-val="1-2">1–2 hrs <span class="c-mr">(१–२ तास)</span></div>
+            <div class="choice" data-val="2-4">2–4 hrs <span class="c-mr">(२–४ तास)</span></div>
+            <div class="choice" data-val="gt4">&gt; 4 hrs <span class="c-mr">(४ तासांपेक्षा जास्त)</span></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="lbl-en" for="sleep">Sleep hours (per day) <span class="mr" style="font-weight:400;color:var(--ink-soft);">(झोपेचे तास - दररोज)</span></label>
+          <input type="number" step="0.5" id="sleep" placeholder="e.g. 11">
+          <div class="err" id="err-sleep">Enter sleep hours. (झोपेचे तास लिहा.)</div>
+        </div>
+
+        <div class="field">
+          <label class="lbl-en">Any concerns? <span class="mr" style="font-weight:400;color:var(--ink-soft);">(काही चिंता आहे का?)</span></label>
+          <div class="concerns" id="concernsList">
+            <label><input type="checkbox" value="Speech"> Speech <span class="c-mr">(बोलण्यासंबंधी)</span></label>
+            <label><input type="checkbox" value="Hyperactivity"> Hyperactivity <span class="c-mr">(अतिचंचलता)</span></label>
+            <label><input type="checkbox" value="Behaviour"> Behaviour <span class="c-mr">(वर्तन)</span></label>
+            <label><input type="checkbox" value="Learning"> Learning <span class="c-mr">(शिकण्यासंबंधी)</span></label>
+            <label><input type="checkbox" value="None"> None of these <span class="c-mr">(यापैकी काहीही नाही)</span></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="nav-btns">
+      <button class="btn-ghost" id="backBtn" onclick="AppForm.prevStep()">Back<br><span class="mr" style="font-size:13px; font-weight:500;">(मागे)</span></button>
+      <button class="btn-primary" id="nextBtn" onclick="AppForm.nextStep()">Next<br><span class="mr" style="font-size:13px; font-weight:500;">(पुढे)</span></button>
+    </div>
+  </div>
+
+  <!-- REPORT -->
+  <div id="report">
+    <div id="reportInner">
+      <div id="repBadge"></div>
+
+      <div class="card">
+        <h3 style="font-family:var(--font-head);color:var(--sky-deep);margin:0 0 12px;">Child details <span class="mr" style="font-weight:400;font-size:14px;color:var(--ink-soft)">(बालकाची माहिती)</span></h3>
+        <div class="kv"><span>Child's name <span class="mr">(नाव)</span></span><span id="rChildName"></span></div>
+        <div class="kv"><span>Sex <span class="mr">(लिंग)</span></span><span id="rSex"></span></div>
+        <div class="kv"><span>Date of birth <span class="mr">(जन्मतारीख)</span></span><span id="rDob"></span></div>
+        <div class="kv"><span>Current age <span class="mr">(सध्याचे वय)</span></span><span id="rAge"></span></div>
+        <div class="kv"><span>Parent <span class="mr">(पालक)</span></span><span id="rParent"></span></div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family:var(--font-head);color:var(--sky-deep);margin:0 0 12px;">Growth curve <span class="mr" style="font-weight:400;font-size:14px;color:var(--ink-soft)">(वाढीचा आलेख)</span></h3>
+        <div id="growthBars"></div>
+        <p class="hint">Expected values use standard age-based reference formulas — indicative, not diagnostic.<br><span class="mr">(अपेक्षित मूल्ये प्रमाणित सूत्रांवर आधारित आहेत — ती निदान नाहीत.)</span></p>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family:var(--font-head);color:var(--sky-deep);margin:0 0 12px;">Development score <span class="mr" style="font-weight:400;font-size:14px;color:var(--ink-soft)">(विकास गुण)</span></h3>
+        <div class="gauge-wrap">
+          <svg width="88" height="88" viewBox="0 0 88 88">
+            <circle cx="44" cy="44" r="37" fill="none" stroke="var(--sky-pale)" stroke-width="9"/>
+            <circle id="gaugeArc" cx="44" cy="44" r="37" fill="none" stroke="var(--mint)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 44 44)"/>
+          </svg>
+          <div>
+            <div class="gauge-num" id="devScoreNum">0%</div>
+            <div class="gauge-sub" id="devScoreSub"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family:var(--font-head);color:var(--sky-deep);margin:0 0 12px;">Behaviour summary <span class="mr" style="font-weight:400;font-size:14px;color:var(--ink-soft)">(वर्तनाचा सारांश)</span></h3>
+        <div class="kv"><span>Screen time <span class="mr">(स्क्रीन वेळ)</span></span><span id="rScreen"></span></div>
+        <div class="kv"><span>Sleep <span class="mr">(झोप)</span></span><span id="rSleep"></span></div>
+        <div class="kv"><span>Concerns <span class="mr">(चिंता)</span></span><span id="rConcerns"></span></div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family:var(--font-head);color:var(--sky-deep);margin:0 0 12px;">Parent advice <span class="mr" style="font-weight:400;font-size:14px;color:var(--ink-soft)">(पालकांसाठी सल्ला)</span></h3>
+        <div class="advice-box" id="adviceBox"></div>
+      </div>
+
+      <div class="card">
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> This is a screening tool only, based on parent-reported measurements and standard reference formulas. It is <strong>not a medical diagnosis</strong>. Please consult a paediatrician / Kaumarbhritya specialist for a complete clinical evaluation.<br>
+          <span class="mr">(ही केवळ एक तपासणी आहे, निदान नाही. कृपया पूर्ण वैद्यकीय मूल्यांकनासाठी बालरोगतज्ञ किंवा कौमारभृत्य तज्ञांचा सल्ला घ्या.)</span>
+        </div>
+      </div>
+
+      <div class="foot">
+        <div><b>Balrog Department</b></div>
+        <span class="mr">(बालरोग विभाग)</span>
+      </div>
+    </div>
+
+    <div class="report-actions">
+      <button class="btn-primary" id="downloadBtn">Download report<br><span class="mr" style="font-size:13px; font-weight:500;">(अहवाल डाउनलोड करा)</span></button>
+      <button class="btn-ghost" onclick="AppForm.restart()">New screening<br><span class="mr" style="font-size:13px; font-weight:500;">(नवीन तपासणी)</span></button>
+    </div>
+  </div>
+
+</div>
+
+<script src="/illustrations.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="/parent.js"></script>
+</body>
+</html>
