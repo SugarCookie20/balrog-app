@@ -11,7 +11,6 @@ const DOCTOR_USER = process.env.DOCTOR_USER || "doctor";
 const DOCTOR_PASS = process.env.DOCTOR_PASS || "balrog2026";
 
 // Generate a random token every time the server starts.
-// (This means restarting the server will securely log everyone out).
 const AUTH_TOKEN = crypto.randomBytes(16).toString("hex");
 
 if (!fs.existsSync(path.dirname(DATA_FILE))) fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
@@ -30,7 +29,7 @@ function writeAll(list) {
 
 app.use(express.json({ limit: "1mb" }));
 
-// ---- NEW: Cookie-based Authentication Middleware ----
+// ---- Cookie-based Authentication Middleware ----
 function requireDoctorAuth(req, res, next) {
   const cookieHeader = req.headers.cookie || "";
   if (cookieHeader.includes(`balrog_auth=${AUTH_TOKEN}`)) {
@@ -45,7 +44,7 @@ function requireDoctorAuth(req, res, next) {
   }
 }
 
-// ---- NEW: Login & Logout API Endpoints ----
+// ---- Login & Logout API Endpoints ----
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
   if (username === DOCTOR_USER && password === DOCTOR_PASS) {
@@ -62,8 +61,6 @@ app.post("/api/logout", (req, res) => {
 });
 
 
-// ---- Secure the Doctor HTML page ----
-// These must be declared BEFORE express.static so we intercept them
 app.get("/doctor", requireDoctorAuth, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "doctor.html"));
 });

@@ -74,7 +74,6 @@ h2.sec-title{ font-family: var(--font-head); font-weight:700; font-size:21px; ma
 .field .lbl-en{ display:block; font-weight:600; font-size:14px; color:var(--ink); margin-bottom:7px; }
 .field .hint{ font-size:11.5px; color:var(--ink-soft); margin-top:5px; }
 
-/* ADDED input[type=password] to this rule so it matches the other fields perfectly */
 input[type=text], input[type=tel], input[type=email], input[type=number], input[type=date], input[type=password], textarea{
   width:100%; font-family: var(--font-body); font-size:15px; padding: 12px 13px;
   border-radius: var(--radius-md); border: 1.6px solid var(--line); background: var(--bg); color: var(--ink); outline:none;
@@ -182,7 +181,6 @@ button{
 .dateinput{ padding:9px 12px; border-radius: 999px; border:1.6px solid var(--line); font-family: var(--font-body); }
 .qrbox{ background:var(--card); border-radius: var(--radius-md); box-shadow: var(--shadow); padding:16px; text-align:center; margin-top:20px; }
 
-/* Make it perfectly compatible for Mobile Screens */
 @media (max-width: 480px) {
   .wrap { padding: 15px 12px 60px; }
   .topbar { flex-direction: column; text-align: center; gap: 8px; }
